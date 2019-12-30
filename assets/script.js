@@ -15,7 +15,6 @@ function buildFiveDayQueryUrl() {
     var fiveDayQueryParams = { "appid": "81f7cb822ccc97ed0abc74ae92129ee2" };
     fiveDayQueryParams.id = data.id;
     fiveDayQueryParams.units = "imperial";
-    console.log(fiveDayQueryURL + $.param(fiveDayQueryParams));
     return fiveDayQueryURL + $.param(fiveDayQueryParams);
 }
 
@@ -51,12 +50,10 @@ $(".search-button").on("click", function (event) {
     event.preventDefault();
 
     var searchHistory = $("#search-term").val().trim();
-    console.log(searchHistory)
     cities.push(searchHistory)
     localStorage.setItem("cities", JSON.stringify(cities));
 
 
-    console.log("hello");
     $("#current-day-forecast").empty();
     $("#five-day-forecast").empty();
     var queryURL = buildQueryUrl();
