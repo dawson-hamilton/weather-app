@@ -21,13 +21,13 @@ function buildFiveDayQueryUrl() {
 var citiesListEl = $("#city-list")
 var cities = []
 init();
-
+//reders the buttons under the search bar
 function renderCities() {
     for (var i = 0; i < cities.length; i++) {
 
         var city = cities[i];
         var li = $("<li>")
-        var button = $("<button>");
+        var button = $("<button class='btn btn-info buttons'>");
         button.text(city);
         button.attr("data-index", i);
         li.append(button)
@@ -128,7 +128,7 @@ $(".search-button").on("click", function (event) {
                 src: dayTwoWeatherIcon,
                 width: 50
             })
-
+            //------------------------------
             var dayTwoCard = $("<div>").addClass("card weather-card col bg-info text-white mr-md-4").attr("style", "width: 18rem");
             var dayTwoDate = $("<h5>").addClass("card-title").text(moment().add(2, 'days').format('L'));
             var dayTwoTemp = $("<p>").addClass("card-text").text("Temperature: " + dayTwo.main.temp + "F");
@@ -147,7 +147,7 @@ $(".search-button").on("click", function (event) {
                 src: dayThreeWeatherIcon,
                 width: 50
             })
-
+            //----------------------------------
             var dayThreeCard = $("<div>").addClass("card weather-card col bg-info text-white mr-md-4").attr("style", "width: 18rem");
             var dayThreeDate = $("<h5>").addClass("card-title").text(moment().add(3, 'days').format('L'));
             var dayThreeTemp = $("<p>").addClass("card-text").text("Temperature: " + dayThree.main.temp + "F");
@@ -166,7 +166,7 @@ $(".search-button").on("click", function (event) {
                 src: dayFourWeatherIcon,
                 width: 50
             })
-
+            //------------------------------------------
             var dayFourCard = $("<div>").addClass("card weather-card col bg-info text-white mr-md-4").attr("style", "width: 18rem");
             var dayFourDate = $("<h5>").addClass("card-title").text(moment().add(4, 'days').format('L'));
             var dayFourTemp = $("<p>").addClass("card-text").text("Temperature: " + dayFour.main.temp + "F");
@@ -185,7 +185,7 @@ $(".search-button").on("click", function (event) {
                 src: dayFiveWeatherIcon,
                 width: 50
             })
-
+            //------------------------------------
             var dayFiveCard = $("<div>").addClass("card weather-card col bg-info text-white").attr("style", "width: 18rem");
             var dayFiveDate = $("<h5>").addClass("card-title").text(moment().add(5, 'days').format('L'));
             var dayFiveTemp = $("<p>").addClass("card-text").text("Temperature: " + dayFive.main.temp + "F");
@@ -195,7 +195,6 @@ $(".search-button").on("click", function (event) {
             $(dayFiveCard).append(dayFiveTemp);
             $(dayFiveCard).append(dayFiveHum);
             $("#five-day-forecast").append(dayFiveCard);
-            // ------------------------
         })
 
         var uvIndexEl;
