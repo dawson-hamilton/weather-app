@@ -18,14 +18,6 @@ function buildFiveDayQueryUrl() {
     return fiveDayQueryURL + $.param(fiveDayQueryParams);
 }
 
-// function buildButtonsUrl() {
-//     var buttonsUrl = "https://api.openweathermap.org/data/2.5/forecast?";
-//     var buttonsQueryParams = { "appid": "81f7cb822ccc97ed0abc74ae92129ee2" };
-//     buttonsQueryParams.q = cityName;
-//     buttonsQueryParams.units = "imperial";
-//     return buttonsUrl + $.param(buttonsQueryParams);
-// }
-
 var citiesListEl = $("#city-list")
 var cities = []
 init();
@@ -97,7 +89,6 @@ $("#city-list").on("click", "button", function () {
         }
 
         fiveDayQueryURL = buildFiveDayQueryUrl();
-        console.log(fiveDayQueryURL);
 
         $.ajax({
             url: fiveDayQueryURL,
@@ -117,7 +108,6 @@ $("#city-list").on("click", "button", function () {
             var dayOneDate = $("<h5>").addClass("card-title").text(moment().add(1, 'days').format('L'));
             var dayOneTemp = $("<p>").addClass("card-text").text("Temperature: " + dayOne.main.temp + "F");
             var dayOneHum = $("<p>").addClass("card-text").text("Humidity: " + dayOne.main.humidity);
-            console.log(dayOneCard);
             $(dayOneCard).append(dayOneDate);
             $(dayOneCard).append(dayOneIconEl)
             $(dayOneCard).append(dayOneTemp);
