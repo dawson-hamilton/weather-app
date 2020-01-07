@@ -9,13 +9,7 @@ the search bar that will give you your search histroy that you can click on and 
 ### Gallery
 ​
 Home:
-![Image title](./relativeLinkToImage.png "Image title")
-​
-Sign In:
-![Home Page View](./relativeLinkToImage.png "Home Page View")
-​
-Super Cool Page:
-![Home Page View](./relativeLinkToImage.png "Home Page View")
+![weather dashboard screenshot](assets/weather-dashboard.png)
 ​
 ### Problem
 ​
